@@ -9,7 +9,6 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
-	"time"
 
 	"github.com/schollz/progressbar/v3"
 )
@@ -110,7 +109,7 @@ func comp_files(file1 string, file2 string) bool {
 
 }
 
-const MAX_CONCURRENT_JOBS = 20000
+const MAX_CONCURRENT_JOBS = 10
 
 func main() {
 
@@ -122,8 +121,8 @@ func main() {
 	count := 0
 	guard := make(chan bool, MAX_CONCURRENT_JOBS)
 
-	for i := 0; i < len(files); i++ {
-		for j := 0; j < len(files); j++ {
+	for _i := 0; _i < len(files); _i++ {
+		for _j := 0; _j < len(files); _j++ {
 
 			guard <- true
 
@@ -139,10 +138,9 @@ func main() {
 					count++
 				}
 
-			}(i, j)
+			}(_i, _j)
 
 			bar.Add(1)
-			time.Sleep(1 * time.Millisecond)
 
 		}
 	}
