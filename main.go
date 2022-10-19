@@ -109,9 +109,9 @@ func comp_files(file1 string, file2 string) bool {
 
 func main() {
 
-	files := get_paths("/home/lucas/Documents/UFOP")
+	files := get_paths(os.Args[1])
 
-	for i := 0; i <= len(files); i++ {
+	for i := 0; i < len(files); i++ {
 		for j := 0; j < len(files); j++ {
 
 			if comp_files(files[i], files[j]) && i != j {
