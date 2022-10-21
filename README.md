@@ -11,6 +11,6 @@ Gopare is a golang application to find duplicated files on specified directory
 
 ```
 git clone https://github.com/Shinji-Mimura/gopare.git
-sudo su # programming must be run as sudo
+sudo su # gopare must be run as sudo
 ./gopare <DIRECTORY> <THREADS NUMBER>
 ```
