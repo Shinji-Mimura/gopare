@@ -10,6 +10,8 @@ import (
 	"strings"
 )
 
+const CHUNK_SIZE = 64000
+
 func GetError(err error) {
 
 	if err != nil {
@@ -29,8 +31,6 @@ func GetBarSize(total_files int) int {
 	return count
 
 }
-
-const CHUNK_SIZE = 64000
 
 func GetPaths(start string) []string {
 
