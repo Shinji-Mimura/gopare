@@ -37,7 +37,3 @@ Gopare is a Go application designed to identify duplicated files within a specif
 ## License
 
 This project is licensed under the terms of the [MIT License](LICENSE).
-
----
-
-Feel free to use this improved README for your repository or make further modifications as needed.
